@@ -1,0 +1,9 @@
+bin
+lib
+include
+local
+manage.py
+*.pyc
+*.db
+.DS_STORE
+.Python
