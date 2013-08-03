@@ -6,4 +6,4 @@ manage.py
 *.pyc
 *.db
 .DS_STORE
-.Python
+.Pythoneventex/static

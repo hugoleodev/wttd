@@ -1,8 +1,9 @@
+import os
 import dj_database_url
 from unipath import Path
 PROJECT_DIR = Path(__file__).parent
 
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", False)
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -142,6 +143,9 @@ LOGGING = {
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue'
         }
     },
     'handlers': {
@@ -149,11 +153,16 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler'
         }
     },
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins'],
+            'handlers': ['mail_admins', 'console'],
             'level': 'ERROR',
             'propagate': True,
         },
