@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<form class="form-horizontal well" action="." method="POST">
+    {% csrf_token %}
+    <fieldset>
+      <legend>Inscrição no evento</legend>
+      <div class="control-group">
+        <label class="control-label" for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+        <div class="controls">
+          {{ form.name }}
+          {{ form.name.errors }}
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}:</label>
+        <div class="controls">
+          {{ form.cpf }}
+          {{ form.cpf.errors }}
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+        <div class="controls">
+          {{ form.email }}
+          {{ form.email.errors }}
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="{{ form.phone.id_for_label }}">{{ form.phone.label }}:</label>
+        <div class="controls">
+          {{ form.phone }}
+          {{ form.phone.errors }}
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </fieldset>
+</form>
+{% endblock content %}

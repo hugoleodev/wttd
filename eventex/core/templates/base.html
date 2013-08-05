@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EventX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EventeX">
+    <meta name="author" content="Hugo Leonardo Costa e Silva">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/eventex.css" rel="stylesheet">
+  </head>
+  <body class="preview" id="top" data-spy="scroll" data-target=".subnav" data-offset="80">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">EventeX</a>
+          <div class="nav-collapse collapse" id="main-menu">
+            <ul class="nav" id="main-menu-left">
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a id="swatch-link" href="#local">Local</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      {% block content %}
+      {% endblock content %}
+      <hr />
+      <footer id="footer">
+        <a href="http://www.djangoproject.com/" id="django" class="pull-right"><img src="https://www.djangoproject.com/m/img/badges/djangosite80x15.gif" alt="A Django site." title="A Django site."></a>
+        © 2013. <a href="/">EventeX</a>,
+        some rights reserved. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" 
+          style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/br/80x15.png" /></a>. Contato: <a href="mailto:hugoleodev@gmail.com">hugoleodev@gmail.com</a><br>
+      </footer>
+    </div>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/eventex.js"></script>
+  </body>
+</html>
