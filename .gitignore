@@ -6,3 +6,7 @@ local
 *.db
 .DS_STORE
 eventex/static
+.project
+.pydevproject
+.settings/
+eventx.nja
