@@ -2,6 +2,7 @@
 {% block content %}
 <form class="form-horizontal well" action="." method="POST">
     {% csrf_token %}
+    {{ form.non_field_errors }}
     <fieldset>
       <legend>Formulário de Inscrição</legend>
       <div class="control-group">
@@ -28,7 +29,7 @@
       <div class="control-group">
         <label class="control-label" for="{{ form.phone.id_for_label }}">{{ form.phone.label }}:</label>
         <div class="controls">
-          {{ form.phone }}
+          {{ form.phone.field.fields.0 }}
           {{ form.phone.errors }}
         </div>
       </div>
