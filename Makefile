@@ -10,5 +10,5 @@ test:
 
 clean:
 	docker-compose kill
-	docker-compose rm
+	docker-compose rm -f
 	docker ps -a | grep 'Exited' | awk '{ print $1 }' | xargs docker rm -f
