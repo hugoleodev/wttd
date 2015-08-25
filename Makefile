@@ -12,3 +12,5 @@ clean:
 	docker-compose kill
 	docker-compose rm -f
 	docker ps -a | grep 'Exited' | cut -f 1 -d' '| xargs docker rm
+
+
