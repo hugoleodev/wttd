@@ -1,0 +1,10 @@
+db:
+  image: postgres
+  environment:
+    POSTGRES_PASSWORD: postgress-user-password
+web:
+  build: .
+  environment:
+    DATABASE_URL: postgres://postgres:postgress-user-password@db:5432/postgres
+  links:
+    - db
